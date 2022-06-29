@@ -5,12 +5,12 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 
-public class Audio {
+public class GameAudio {
 
     Map<String, Clip> clips = new HashMap<>();
 
 
-    public Audio() {
+    public GameAudio() {
         loadAudioClip("/audio/bell.wav");
         loadAudioClip("/audio/pops.wav");
         loadAudioClip("/audio/rolling-dice.wav");

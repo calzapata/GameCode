@@ -1,4 +1,4 @@
-package interfaz;
+
 
 
 import javax.swing.JFrame;
@@ -18,8 +18,8 @@ import java.awt.Font;
 import javax.swing.border.BevelBorder;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-
-public class Interfaz1 extends JFrame {
+@SuppressWarnings("serial")
+public class UsuarioPanel extends JFrame {
 
 	private JPanel contentPane;
 	private JButton buttonIngresar;
@@ -27,8 +27,8 @@ public class Interfaz1 extends JFrame {
 	public static JPasswordField inputPassword;
 
 
-	public Interfaz1() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\PC-02\\Downloads\\gameCode.jpg"));
+	public UsuarioPanel() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\carlos zpa\\Documents\\GitHub\\GameCode\\src\\main\\resources\\images\\icono.png"));
 		setTitle("GAME CODE");
 		setForeground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -49,21 +49,21 @@ public class Interfaz1 extends JFrame {
 		imgWindow1.setHorizontalAlignment(SwingConstants.CENTER);
 		imgWindow1.setBounds(0, 0, 206, 261);
 		panel.add(imgWindow1);
-		imgWindow1.setIcon(new ImageIcon("C:\\Users\\PC-02\\Downloads\\A8.jpg"));
+		imgWindow1.setIcon(new ImageIcon("C:\\Users\\carlos zpa\\Documents\\GitHub\\GameCode\\src\\main\\resources\\images\\icono.png"));
 		
-		final DatosUsuario data = new DatosUsuario();
-		final Interfaz2 inter2 = new Interfaz2();
-		
+		final UsuarioDatos data = new UsuarioDatos();
+		final Game inter2 = new Game();
 		buttonIngresar = new JButton("Ingresar");
 		buttonIngresar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+				inter2.setVisible(false);	
 				if(data.probarUsuario()== 1) {
-					JOptionPane.showMessageDialog(null, "bienvenidos");
+					JOptionPane.showMessageDialog(null, "Bienvenidos a"+"\n"+" GAME-CODE");
 					inter2.setVisible(true);
 					dispose();
 				}
 				else {
-					JOptionPane.showMessageDialog(null, "usuario contrase;a incorrecta");
+					JOptionPane.showMessageDialog(null, "Usuario Contrase;a Incorrecta");	
 				}
 				
 			}
@@ -75,13 +75,6 @@ public class Interfaz1 extends JFrame {
 		buttonIngresar.setAlignmentY(Component.TOP_ALIGNMENT);
 		buttonIngresar.setBounds(272, 187, 113, 23);
 		contentPane.add(buttonIngresar);
-		
-		JButton buttonNuevoUsuario = new JButton("Nuevo Usuario");
-		buttonNuevoUsuario.setFont(new Font("Tahoma", Font.PLAIN, 11));
-		buttonNuevoUsuario.setForeground(Color.BLACK);
-		buttonNuevoUsuario.setBackground(new Color(102, 153, 204));
-		buttonNuevoUsuario.setBounds(256, 216, 144, 23);
-		contentPane.add(buttonNuevoUsuario);
 		
 		JLabel txtUsuario = new JLabel("usuario");
 		txtUsuario.setFont(new Font("Tahoma", Font.BOLD, 11));

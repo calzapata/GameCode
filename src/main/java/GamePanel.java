@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Objects;
 
+@SuppressWarnings("serial")
 public class GamePanel extends JPanel {
 
     Graphics2D g2D;
@@ -20,7 +21,7 @@ public class GamePanel extends JPanel {
     int actualXPosition = 5;
     int actualYPosition = 150;
     int counterPositions = -1;
-    Audio audioClips = new Audio();
+    GameAudio audioClips = new GameAudio();
 
 
     GamePanel() {
@@ -73,7 +74,7 @@ public class GamePanel extends JPanel {
     public ImageIcon ImageOfDice(int number) {
         counterPositions += number;
         if (counterPositions > Game.arrayXPosition.size() || counterPositions > Game.arrayYPosition.size()) {
-            System.out.println("HA GANADO..");
+        	JOptionPane.showMessageDialog(null, "GANASTE");
             actualXPosition = Game.arrayXPosition.get(14);
             actualYPosition = Game.arrayYPosition.get(14);
             audioClips.playAudioClip("/audio/bell.wav");
@@ -86,16 +87,23 @@ public class GamePanel extends JPanel {
 
         switch (number) {
             case 1:
+            	JOptionPane.showMessageDialog(null, animatedDice, TOOL_TIP_TEXT_KEY, number, dice1);
                 return dice1;
             case 2:
+            	JOptionPane.showMessageDialog(null, animatedDice, TOOL_TIP_TEXT_KEY, number, dice1);
                 return dice2;
             case 3:
+            	JOptionPane.showMessageDialog(null, "ESTA JUEGO FUE CREADO CON : Graphics"+"\n"+" que es la clase base abstracta para todos"+"\n"+" los contextos gráficos que permiten que una "+"\n"+"aplicación se dibuje en componentes que se realizan "+"\n"+"en varios dispositivos, así como en imágenes fuera de pantalla");
                 return dice3;
             case 4:
+            	JOptionPane.showMessageDialog(null, "LENGUAJE EN EL QUE FUE CREADO :"+"\n"+" Java es un lenguaje de programación y una plataforma informática"+"\n"+" que fue comercializada por primera vez en 1995 por Sun Microsystems."+"\n"+" Hay muchas aplicaciones y sitios web que no funcionarán,"+"\n"+" probablemente, a menos que tengan Java instalado, y cada"+"\n"+" día se crean más. Java es rápido, seguro y fiable");
                 return dice4;
             case 5:
+            	JOptionPane.showMessageDialog(null, " PLUGINS USADO : "+"\n"+" WindowBuilder es uno de mis plugins preferidos para desarrollar"+"\n"+" interfaces gráficas Java en Eclipse. Es bastante intuitivo, "+"\n"+"permite configuraciones de varias líneas de código con un sólo clic"+"\n"+" y el resultado es aceptable.");
                 return dice5;
             case 6:
+            	JOptionPane.showMessageDialog(null, "SISTEMA DE AUDIO DEL JUEGO : "+"\n"+" Clipinterfaz que representa un tipo especial de línea de "+"\n"+" datos cuyos datos de audio se pueden cargar antes de la reproducción,  "+"\n"+"en lugar de transmitirse en tiempo real.\r\n"
+            			+ "Debido a que los datos están precargados y tienen "+"\n"+" una duración conocida, puede configurar un clip para que comience  "+"\n"+"a reproducirse en cualquier posición de sus datos de audio. También puede crear "+"\n"+" un bucle para que, cuando se reproduzca el clip, se reproduzca repetidamente. "+"\n"+" Los bucles se especifican con un fotograma de muestra inicial y final,  "+"\n"+"junto con el número de veces que se debe reproducir el bucle.");
                 return dice6;
             default:
                 return stop;

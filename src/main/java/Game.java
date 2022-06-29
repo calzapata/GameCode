@@ -5,13 +5,14 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.Objects;
 
+@SuppressWarnings("serial")
 public class Game extends JFrame {
     GamePanel panel;
     Image icon;
 
     static ArrayList<Integer> arrayXPosition = new ArrayList<>();
     static ArrayList<Integer> arrayYPosition = new ArrayList<>();
-    Audio audioClips = new Audio();
+    GameAudio audioClips = new GameAudio();
 
     public Game() {
 
@@ -43,11 +44,11 @@ public class Game extends JFrame {
         this.setResizable(false);
         this.pack();
         this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        this.setVisible(false);
 
     }
 
-    public static void createArraysPositions(){
+	public static void createArraysPositions(){
         var x = 60;
         var y = 120;
         for (int i = 0; i < 5; i++) {
@@ -67,13 +68,17 @@ public class Game extends JFrame {
             arrayYPosition.add(y+20);
             x -= 60;
         }
+        
     }
+    
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 createArraysPositions();
-                new Game().setVisible(true);
+                new Game().setVisible(false);
+                UsuarioPanel ventana = new UsuarioPanel();
+        		ventana.setVisible(true);
             }
         });
     }
