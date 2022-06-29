@@ -22,7 +22,7 @@ public class Game extends JFrame {
 
 
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        this.setTitle("Code Game");
+        this.setTitle("GAME-CODE");
         this.setIconImage(icon);
 
         JButton diceButton = new JButton();
