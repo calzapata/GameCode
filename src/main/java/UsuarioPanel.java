@@ -17,6 +17,7 @@ import java.awt.Toolkit;
 import java.awt.Font;
 import javax.swing.border.BevelBorder;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 import java.awt.event.ActionEvent;
 @SuppressWarnings("serial")
 public class UsuarioPanel extends JFrame {
@@ -28,8 +29,9 @@ public class UsuarioPanel extends JFrame {
 
 
 	public UsuarioPanel() {
-		setIconImage(Toolkit.getDefaultToolkit().getImage("C:\\Users\\carlos zpa\\Documents\\GitHub\\GameCode\\src\\main\\resources\\images\\icono.png"));
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Objects.requireNonNull(this.getClass().getResource("images/icono.png"))));
 		setTitle("GAME CODE");
+		setLocationRelativeTo(null);
 		setForeground(Color.LIGHT_GRAY);
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
@@ -44,12 +46,12 @@ public class UsuarioPanel extends JFrame {
 		panel.setBounds(0, 0, 206, 261);
 		contentPane.add(panel);
 		panel.setLayout(null);
-		
+	
 		JLabel imgWindow1 = new JLabel("");
 		imgWindow1.setHorizontalAlignment(SwingConstants.CENTER);
 		imgWindow1.setBounds(0, 0, 206, 261);
 		panel.add(imgWindow1);
-		imgWindow1.setIcon(new ImageIcon("C:\\Users\\carlos zpa\\Documents\\GitHub\\GameCode\\src\\main\\resources\\images\\icono.png"));
+		imgWindow1.setIcon(new ImageIcon(Objects.requireNonNull(this.getClass().getResource("images/icono.png"))));
 		
 		final UsuarioDatos data = new UsuarioDatos();
 		final Game inter2 = new Game();
@@ -98,13 +100,6 @@ public class UsuarioPanel extends JFrame {
 		inputPassword.setBounds(272, 156, 113, 20);
 		contentPane.add(inputPassword);
 		
-		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setAlignmentY(Component.BOTTOM_ALIGNMENT);
-		lblNewLabel.setForeground(SystemColor.inactiveCaption);
-		lblNewLabel.setBackground(Color.WHITE);
-		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\PC-02\\Downloads\\31.png"));
-		lblNewLabel.setBounds(220, 9, 199, 92);
-		contentPane.add(lblNewLabel);
+		
 	}
 }

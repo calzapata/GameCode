@@ -87,10 +87,8 @@ public class GamePanel extends JPanel {
 
         switch (number) {
             case 1:
-            	JOptionPane.showMessageDialog(null, animatedDice, TOOL_TIP_TEXT_KEY, number, dice1);
                 return dice1;
             case 2:
-            	JOptionPane.showMessageDialog(null, animatedDice, TOOL_TIP_TEXT_KEY, number, dice1);
                 return dice2;
             case 3:
             	JOptionPane.showMessageDialog(null, "ESTA JUEGO FUE CREADO CON : Graphics"+"\n"+" que es la clase base abstracta para todos"+"\n"+" los contextos gráficos que permiten que una "+"\n"+"aplicación se dibuje en componentes que se realizan "+"\n"+"en varios dispositivos, así como en imágenes fuera de pantalla");

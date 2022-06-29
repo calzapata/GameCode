@@ -79,6 +79,7 @@ public class Game extends JFrame {
                 new Game().setVisible(false);
                 UsuarioPanel ventana = new UsuarioPanel();
         		ventana.setVisible(true);
+        		ventana.setLocationRelativeTo(null);
             }
         });
     }
